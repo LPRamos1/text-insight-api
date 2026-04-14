@@ -1,51 +1,59 @@
 # 🔍 TextInsight API
 
-A functional **FastAPI** application designed to practice text processing and API development. This project was built to demonstrate clean code structure, data validation with Pydantic, and basic containerization with Docker.
+A simple FastAPI project built to practice backend development and text processing fundamentals using Python.
 
-## 🚀 Key Features
-- **Text Metrics**: Calculates word count, character count, and estimated reading time.
-- **Keyword Extraction**: Identifies the top 5 most frequent words (filtering short words).
-- **Interactive Docs**: Automatic Swagger UI for easy testing of endpoints.
-- **Developer Ready**: Includes unit tests and Docker configuration.
+---
 
-## 🛠️ Tech Stack (Beginner Level)
-- **Python 3.11**
-- **FastAPI**: Used for routing and request handling.
-- **Pydantic**: Ensuring data integrity via schemas.
-- **Docker**: Simple containerization for local development.
-- **Pytest**: Unit testing for the analysis logic.
+## 🚀 Features
 
-## 📦 Installation & Setup
+- Word and character count
+- Estimated reading time calculation
+- Top keyword extraction (frequency-based)
+- REST API with FastAPI
+- Automatic API documentation (Swagger UI)
 
-### Using Docker (Recommended)
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/LPRamos1/text-insight-api.git](https://github.com/LPRamos1/text-insight-api.git)
-   cd text-insight-api
-    ```
-2. Run with Docker Compose:
- ```bash
+---
+
+## 🛠️ Tech Stack
+
+- Python 3.11
+- FastAPI
+- Pydantic
+- Pytest
+- Docker (basic usage)
+
+---
+
+## ⚙️ How it works
+
+The API receives a text input, processes it using basic NLP techniques, and returns simple metrics such as word count and keyword frequency.
+
+Input → Text processing → JSON response
+
+---
+
+## 📦 Setup
+
+### Docker
+
+```bash
+git clone https://github.com/LPRamos1/text-insight-api.git
+cd text-insight-api
 docker-compose up --build
 ```
-3. Access the API documentation at: http://localhost:8080/docs
-
-### Manual Setup (Local Venv)
-1. Create and activate a virtual environment:
+Local
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: .\venv\Scripts\activate
-```
-2. Install dependencies:
-```bash
+source venv/bin/activate
 pip install -r requirements.txt
-```
-3. Run the server:
-```bash
 uvicorn app.main:app --reload
 ```
-
-## 🧪 Running Tests
-To run the automated test suite, use:
+🧪 Tests
 ```bash
 pytest tests/
 ```
+🎯 Purpose
+
+This project was built as part of my learning process in backend development using FastAPI, focusing on API design, data validation, and simple text processing.
+
+
