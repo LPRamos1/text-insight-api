@@ -8,7 +8,7 @@ class TextInput(BaseModel):
     title: str = Field(
         default=...,
         json_schema_extra={"example": "Just a Text"},
-        description="The title of the text",
+        description="This is an example text...",
     )
     content: str = Field(
         default=...,
