@@ -1,6 +1,6 @@
 # 🔍 TextInsight API
 
-A simple FastAPI project built to practice backend development and text processing fundamentals using Python.
+A FastAPI project built to practice backend development, API design, and text processing using Python.
 
 ---
 
@@ -9,10 +9,11 @@ A simple FastAPI project built to practice backend development and text processi
 - Word and character count
 - Estimated reading time calculation
 - Top keyword extraction (frequency-based)
-- REST API with FastAPI
+- REST API built with FastAPI
 - Automatic API documentation (Swagger UI)
 
 ---
+
 
 ## 🛠️ Tech Stack
 
@@ -26,15 +27,15 @@ A simple FastAPI project built to practice backend development and text processi
 
 ## ⚙️ How it works
 
-The API receives a text input, processes it using basic NLP techniques, and returns simple metrics such as word count and keyword frequency.
+The API receives a text input, validates it using Pydantic, processes it with basic NLP techniques, and returns structured metrics.
 
-Input → Text processing → JSON response
+Input → Validation → Processing → JSON Response
 
 ---
 
 ## 📦 Setup
 
-### Docker
+### Local
 
 ```bash
 git clone https://github.com/LPRamos1/text-insight-api.git
@@ -52,8 +53,19 @@ uvicorn app.main:app --reload
 ```bash
 pytest tests/
 ```
-🎯 Purpose
 
-This project was built as part of my learning process in backend development using FastAPI, focusing on API design, data validation, and simple text processing.
+## 🎯 Purpose
+
+This project was built as part of my learning process in backend development using FastAPI, focusing on API design, data validation (Pydantic), and modular Python architecture.
+
+It demonstrates how to structure a simple but clean REST API with separation between API layer and business logic.
+
+## 📚 What I learned
+
+- How to build a REST API using FastAPI
+- Basic API structure and request validation with Pydantic
+- Separation between business logic and API layer
+- Basic text processing techniques in Python
+- Containerization basics using Docker
 
 
