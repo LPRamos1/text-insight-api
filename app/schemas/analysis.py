@@ -1,12 +1,12 @@
 from pydantic import BaseModel, Field
-from typing import Dict
+from typing import Dict, Optional
 
 
-#
 class TextInput(BaseModel):
-    #
+    """Schema for creating a new text analysis."""
+
     title: str = Field(
-        default=...,
+        ...,
         json_schema_extra={"example": "Just a Text"},
         description="The title of the text",
     )
@@ -20,10 +20,20 @@ class TextInput(BaseModel):
     )
 
 
-#
+class TextUpdate(BaseModel):
+    """Schema for updating an existing analysis."""
+
+    title: Optional[str] = None
+    content: Optional[str] = None
+
+
 class TextAnalysisResponse(BaseModel):
+    """Schema returned after processing a text analysis."""
+
+    id: int
+    title: str
+    content: str
     word_count: int
     char_count: int
     reading_time_minutes: float
-    # Dict where key is the word str and the value is int
     top_keywords: Dict[str, int]

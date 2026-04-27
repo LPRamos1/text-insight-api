@@ -1,16 +1,17 @@
 from fastapi import FastAPI
-from app.schemas import TextInput, TextAnalysisResponse
-from app.analyzer import analyze_text
+from app.api.routes import analysis
+from app.db.session import engine
+from app.db.base import Base
+from app.models.analysis import Analysis
+import logging
 
-app = FastAPI(
-    title="TextInsight API", description="API to analyze text metrics", version="1.0.0"
-)
+app = FastAPI()
 
+# Configure basic logging for the application
+logging.basicConfig(level=logging.INFO)
 
-@app.post("/analyze", response_model=TextAnalysisResponse)
-async def post_analyze(data: TextInput):
-   """
-    Receives text data and returns the analysis results.
-    """
-    results = analyze_text(data.content)
-    return results
+# Register API routes
+app.include_router(analysis.router, prefix="/analysis")
+
+# Create database tables on startup (dev only)
+Base.metadata.create_all(bind=engine)

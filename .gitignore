@@ -1,27 +1,37 @@
-# Python virtual environment
-venv/
-ENV/
-env/
-
-# Python bytecode/cache
+# Python
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
 
-# Testing
+# Virtual env
+venv/
+.env
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.pid
+
+# Pytest
 .pytest_cache/
+
+# Coverage
 .coverage
 htmlcov/
 
-# Docker
-.dockerignore
+# Database
+*.db
+*.sqlite3
+postgres_data/
 
-# IDEs and Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Project specific
-history.json
-*.log
+# Secrets
+.env
